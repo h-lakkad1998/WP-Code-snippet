@@ -57,4 +57,40 @@ $logged_in_data = ( $logged_in_data ) ?  explode( ',', $logged_in_data ) : array
 $without_login_data = ( isset( $_COOKIE['nls_saved_brands'] ) && '' !== trim( $_COOKIE['nls_saved_brands'] ) ) ? explode(',', $_COOKIE['nls_saved_brands'] ) : array() ;
 $saved_list = ( is_user_logged_in() ) ? $logged_in_data : $without_login_data; 
 
-// ####101#### CODE SNIPPET ENDS
+// ####101####  FAV. WISHLIST CODE SNIPPET ENDS
+
+
+####102#### TIME LOGGER CODE SNIPPET STARTS
+$time_log = array(
+    array(
+        "IN"    => "11:34",
+        "OUT"   => "13:05",
+    ),
+    array(
+        "IN"    => "14:03",
+        "OUT"   => "21:02",
+    ),
+);
+$diff = 000000;
+foreach ($time_log as $key => $single_entry) {
+    $hour_in  = null;
+    $hour_out = $single_entry["OUT"];
+
+    if (isset($single_entry["IN"]))
+        $hour_in = $single_entry["IN"];
+
+    if ($hour_in != null)
+        $diff += (strtotime($hour_out) - strtotime($hour_in));
+}
+$total              = $diff / 60;
+$total_hours        = floor($total / 60);
+$total_minutes      = floor($total % 60);
+$total_hours_worked = sprintf('%02d:%02d', $total_hours, $total_minutes);
+echo $total_hours_worked;
+
+$remain_format =  date('h:i:s', $diff);
+$c_time1 = strtotime( $remain_format );
+$c_time2 = strtotime('08:30:00');
+$m_difference = round(abs($c_time2 - $c_time1) / 60);
+
+####102#### TIME LOGGER CODE SNIPPET ENDS
