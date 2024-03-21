@@ -10,3 +10,8 @@ This snippet is for favourite wishlist Using Wordpress
 js and php files
 Time logger - check login logout time - usage for office clocked in hours
 ### 102 ENDS ###
+
+# 2) CODE: ####103#### Woo addon-no plugin
+php file
+Woo add on without us of plugin till email order
+### 103 ENDS ###
