@@ -333,3 +333,23 @@ function nls_product_add_on_display_order($cart_item, $order_item)
 add_filter('woocommerce_order_item_product', 'nls_product_add_on_display_order', 10, 2);
 
 ####103#### Woo addon-no plugin CODE SNIPPET ENDS
+
+// 7. Create custom table in the database
+function create_plugin_database_table() {
+	global $wpdb;
+	
+	$tblname = 'nls_customer';
+	$wp_track_table = $wpdb->prefix . "$tblname";
+	$charset_collate = $wpdb->get_charset_collate();
+	
+	$sql = "CREATE TABLE IF NOT EXISTS $wp_track_table ( ";
+	$sql .= "  `id`  int(11)   NOT NULL auto_increment, ";
+	$sql .= "  `pincode`  int(128)   NOT NULL, ";
+	$sql .= "  PRIMARY KEY `order_id` (`id`) "; 
+	$sql .= ") ". $charset_collate .";";
+	require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
+	dbDelta($sql);
+}
+add_action('init','create_plugin_database_table');
+
+####104#### Create custom table CODE SNIPPET ENDS
