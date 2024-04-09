@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/multi-task",
+	"version": "0.1.0",
+	"title": "Multi Task",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"keywords": ["silence-is-the-gold", "gold", "silver", "Rating", "vote form", "voting" ],
+	"example": {},
+	"attributes": {
+		"multi_settings": {
+			"type": "array"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "multi-task",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./../src/render.php"
+}

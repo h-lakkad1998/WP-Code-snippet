@@ -1,0 +1,27 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-multi-task {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+
+#VOTING_form .user-list .user-box{
+	display: inline-block;
+	margin: 0px 20px;
+}
+
+#VOTING_form .form-field input{
+	width: 600px;
+}
+
+#VOTING_form .generate-otp, #VOTING_form .submit-vote,#VOTING_form .otp-verify{
+	text-align: center;
+	display: none;
+}
+
